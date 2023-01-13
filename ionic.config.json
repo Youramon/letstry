@@ -1,0 +1,8 @@
+{
+  "name": "letstry",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "4394c86d"
+}
