@@ -9,6 +9,7 @@ ion-menu-button {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+
 }
 
 #container strong {
@@ -25,4 +26,42 @@ ion-menu-button {
 
 #container a {
   text-decoration: none;
+}
+
+
+.center{
+display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.rounded {
+  border-radius: 10px;
+overflow: hidden;
+  width: 250px;
+  margin-left: 40%;
+  margin-top: 20px;
+  border: 0px;
+  padding: 0px;
+}
+
+ion-item {
+  width: 300px;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+
+}
+.dieitems{
+  --border-radius: 30px;
+}
+.hintergrund{
+  --background: linear-gradient(to right top, #144165 0%,#1a5d94 40%, #000fff 100%);
+
+}
+ion-button{
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-bottom: 15px;
 }

@@ -1,21 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button>{{folder}}</ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>{{folder}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+
+  <div id="container" class = "center">
+    <ion-content class = "hintergrund">
+  <ion-list class = "rounded" *ngFor="let p of jzListe">
+    <ion-item href = "#" target="_blank" fill = "solid" shape = "round" [ngStyle]= "{'--background': 'rgb(' + randcolor[0] + ',' + this.randcolor[1] + ',' + randcolor[2] + ')'}">
+   <ion-label>{{jzListe.indexOf(p) + 1}}. {{p}}</ion-label>
+    </ion-item>
+   </ion-list>
+  </ion-content>
+</div>
+<ion-button (click) = "listentest()">{{counter}}</ion-button> 
