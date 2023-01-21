@@ -12,10 +12,19 @@
   <div id="container" class = "center">
     <ion-content class = "hintergrund">
   <ion-list class = "rounded" *ngFor="let p of jzListe">
-    <ion-item href = "#" target="_blank" fill = "solid" shape = "round" [ngStyle]= "{'--background': 'rgb(' + randcolor[0] + ',' + this.randcolor[1] + ',' + randcolor[2] + ')'}">
-   <ion-label>{{jzListe.indexOf(p) + 1}}. {{p}}</ion-label>
+    <ion-item href = {{p.link}} target="_blank" fill = "solid" shape = "round" [ngStyle]= "{'--background': 'linear-gradient(to right, rgb(' + randcolorray[0] + ',' + randcolorray[1] + ',' + randcolorray[2] + ') 0%,rgb(' + randcolorray2[0] + ',' + randcolorray2[1] + ',' + randcolorray2[2] + ') 100%'}">
+   
+      <ion-avatar slot = "start"><span *ngIf="p.initPos - jzListe.indexOf(p)-1 >= 0">+</span>{{p.initPos - jzListe.indexOf(p)-1}}</ion-avatar>
+  
+      <ion-icon *ngIf=" p.movement === 2" slot = "end" name = "caret-up"></ion-icon>
+  
+      <ion-icon *ngIf="p.movement === 1" slot = "end" name = "caret-down"></ion-icon>
+
+   
+      <ion-label>{{jzListe.indexOf(p) + 1}}. {{p.title}} <span *ngIf = "jzListe.indexOf(p) == 0">(+{{p.incfirst}})</span></ion-label>
     </ion-item>
-   </ion-list>
+  
+</ion-list>
   </ion-content>
 </div>
 <ion-button (click) = "listentest()">{{counter}}</ion-button> 
