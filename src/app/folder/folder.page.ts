@@ -12,23 +12,28 @@ import *as logik from "./logik"
 export class FolderPage implements OnInit {
   public folder!: string;
   public counter = 0;
-  public randcolor: number[] = [254,50,2];
+public randcolorray = [1,5,7]
+public randcolorray2 = [2,6,8]
+  randcolor(){
+  return Math.round(Math.random()*255);
+}
+
   listentest(){
     this.counter = this.counter +1;
     logik.listSort()
   }
+ public jzListe: logik.listMemba[] = [new logik.listMemba("aaa",45,"bbb")];
 
-  public jzListe = ["a","b","c"];
-  constructor(private activatedRoute: ActivatedRoute) { }
+ constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
    
       this.jzListe = db.alleListen[this.folder];
-      for (var _i = 0; _i < this.randcolor.length; _i++){
-        this.randcolor[_i] = Math.round(Math.random()*255);
+      for(var i = 0; i < 3; i++){
+      this.randcolorray[i] = this.randcolor();
+      this.randcolorray2[i] = this.randcolor();
       }
-    
     
   }
 

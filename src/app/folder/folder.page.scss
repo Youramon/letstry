@@ -37,13 +37,14 @@ display:flex;
 }
 
 .rounded {
-  border-radius: 10px;
+  border-radius: 15px;
 overflow: hidden;
-  width: 250px;
+  width: 300px;
   margin-left: 40%;
   margin-top: 20px;
   border: 0px;
   padding: 0px;
+
 }
 
 ion-item {
@@ -53,9 +54,7 @@ ion-item {
   padding: 0px;
 
 }
-.dieitems{
-  --border-radius: 30px;
-}
+
 .hintergrund{
   --background: linear-gradient(to right top, #144165 0%,#1a5d94 40%, #000fff 100%);
 
