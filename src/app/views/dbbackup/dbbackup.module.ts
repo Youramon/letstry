@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AnfangPageRoutingModule } from './anfang-routing.module';
+import { DbbackupPageRoutingModule } from './dbbackup-routing.module';
 
-import { AnfangPage } from './anfang.page';
+import { DbbackupPage } from './dbbackup.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AnfangPageRoutingModule
+    DbbackupPageRoutingModule
   ],
-  declarations: [AnfangPage]
+  declarations: [DbbackupPage]
 })
-export class AnfangPageModule {}
+export class DbbackupPageModule {}

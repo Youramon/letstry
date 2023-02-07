@@ -10,12 +10,12 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },  {
+    path: 'dbbackup',
+    loadChildren: () => import('./views/dbbackup/dbbackup.module').then( m => m.DbbackupPageModule)
   },
-  {
-    path: 'anfang',
-    loadChildren: () => import('./views/anfang/anfang.module').then( m => m.AnfangPageModule)
-  }
 
+ 
 ];
 
 @NgModule({
