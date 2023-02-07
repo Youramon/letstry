@@ -1,18 +1,17 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button>{{folder}}</ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{folder}}</ion-title>
-  </ion-toolbar>
+  <app-shared-header title = {{folder}}></app-shared-header>
 </ion-header>
-
 
 
   <div id="container" class = "center">
     <ion-content class = "hintergrund">
-  <ion-list class = "rounded" *ngFor="let p of jzListe">
-    <ion-item href = {{p.link}} target="_blank" fill = "solid" shape = "round" [ngStyle]= "{'--background': 'linear-gradient(to right, rgb(' + randcolorray[0] + ',' + randcolorray[1] + ',' + randcolorray[2] + ') 0%,rgb(' + randcolorray2[0] + ',' + randcolorray2[1] + ',' + randcolorray2[2] + ') 100%'}">
+  <ion-fab slot = "fixed" vertical = "bottom" horizontal="end">
+<ion-fab-button (click) = "listentest()">
+  <ion-icon size = "large" name = "add"></ion-icon>
+</ion-fab-button>
+  </ion-fab>
+      <ion-list class = "rounded" *ngFor="let p of jzListe">
+    <ion-item href = {{p.link}} target="_blank" fill = "solid" shape = "round" [ngStyle]= "{'--background': 'linear-gradient(to right top, rgb(' + randcolorray[0] + ',' + randcolorray[1] + ',' + randcolorray[2] + ') 0%,rgb(' + randcolorray2[0] + ',' + randcolorray2[1] + ',' + randcolorray2[2] + ') 100%'}">
    
       <ion-avatar slot = "start"><span *ngIf="p.initPos - jzListe.indexOf(p)-1 >= 0">+</span>{{p.initPos - jzListe.indexOf(p)-1}}</ion-avatar>
   
@@ -27,4 +26,4 @@
 </ion-list>
   </ion-content>
 </div>
-<ion-button (click) = "listentest()">{{counter}}</ion-button> 
+

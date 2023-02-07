@@ -50,8 +50,7 @@ overflow: hidden;
 ion-item {
   width: 300px;
   height: 50px;
-  margin: 0px;
-  padding: 0px;
+
 
 }
 
@@ -59,8 +58,10 @@ ion-item {
   --background: linear-gradient(to right top, #144165 0%,#1a5d94 40%, #000fff 100%);
 
 }
-ion-button{
-  margin-left: 35px;
-  margin-right: 35px;
-  margin-bottom: 15px;
+
+ion-fab-button{
+  margin-right: 29px;
+  height: 98px;
+  width: 99px;
 }
+

@@ -1,15 +1,23 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import *as db from "./db"
 import *as logik from "./logik"
-
+import {DbbackupPage} from "src/app/views/dbbackup/dbbackup.page"
+import { SharedHeaderComponent } from '../components/shared-header/shared-header.component';
 
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
 })
+ 
+
+
 export class FolderPage implements OnInit {
+ 
+  
+  public isOpen: boolean = false;
   public folder!: string;
   public counter = 0;
 public randcolorray = [1,5,7]
@@ -24,8 +32,11 @@ public randcolorray2 = [2,6,8]
   }
  public jzListe: logik.listMemba[] = [new logik.listMemba("aaa",45,"bbb")];
 
- constructor(private activatedRoute: ActivatedRoute) { }
+  component = DbbackupPage;
+constructor(private activatedRoute: ActivatedRoute ,private router: Router) { }
 
+
+ 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
    
