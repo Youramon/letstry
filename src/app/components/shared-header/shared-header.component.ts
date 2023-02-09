@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, PopoverController } from '@ionic/angular';
 import { FolderPageRoutingModule } from 'src/app/folder/folder-routing.module';
 import { PopoverpageComponent } from 'src/app/popoverpage/popoverpage.component';
+import *as db from "src/app/folder/db"
+
 
 @Component({
   standalone: true,
@@ -18,16 +20,18 @@ import { PopoverpageComponent } from 'src/app/popoverpage/popoverpage.component'
   styleUrls: ['./shared-header.component.scss'],
 })
 export class SharedHeaderComponent implements OnInit {
-@Input() title: string;
+  @Input() title: string;
+ popover:any;
 
   constructor(private popoverCtrl: PopoverController) { }
+
   async presentPopover(ev: any) {
-    const popover = await this.popoverCtrl.create({
+db.setPopover( await this.popoverCtrl.create({
       component: PopoverpageComponent,
       event: ev,
       translucent: true
-    });
-    return await popover.present();
+    }));
+    return await db.popover.present();
   }
   ngOnInit() {}
 

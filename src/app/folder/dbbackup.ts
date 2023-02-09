@@ -1,4 +1,4 @@
-import { searchEngines,chattingApps, streamingUnlimited, clouds,youtubesocials,videoEditors } from "./db"; 
+ 
 import *as logik from "./logik"
 
 export const searchEngineBU: logik.listMemba[] = [];

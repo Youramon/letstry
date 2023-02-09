@@ -9,7 +9,8 @@
 <ion-fab-button (click) = "listentest()">
   <ion-icon size = "large" name = "add"></ion-icon>
 </ion-fab-button>
-  </ion-fab>
+</ion-fab>
+<h1>Die Listen zum Anschauen</h1>  
       <ion-list class = "rounded" *ngFor="let p of jzListe">
     <ion-item href = {{p.link}} target="_blank" fill = "solid" shape = "round" [ngStyle]= "{'--background': 'linear-gradient(to right top, rgb(' + randcolorray[0] + ',' + randcolorray[1] + ',' + randcolorray[2] + ') 0%,rgb(' + randcolorray2[0] + ',' + randcolorray2[1] + ',' + randcolorray2[2] + ') 100%'}">
    

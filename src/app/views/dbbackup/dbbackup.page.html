@@ -8,3 +8,27 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <ion-select interface = "popover" placeholder="Select fruit">
+    <ion-select-option value="apples">Apples</ion-select-option>
+    <ion-select-option value="oranges">Oranges</ion-select-option>
+    <ion-select-option value="bananas">Bananas</ion-select-option>
+  </ion-select>
+  <ion-accordion-group>
+  <ion-list *ngFor = "let p of jzListe" [inset] = "true">
+ 
+    <ion-accordion value = {{p.title}}>
+ 
+      <ion-item slot="header" color="light">
+    <ion-label>{{p.title}}</ion-label>
+ 
+  </ion-item>
+ 
+  <div class="ion-padding" slot="content">
+    {{p.link}}
+  </div>
+ </ion-accordion>
+  </ion-list>
+</ion-accordion-group>
+</ion-content>
