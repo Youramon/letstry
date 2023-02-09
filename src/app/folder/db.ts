@@ -14,6 +14,8 @@ export const videoEditors = [new logik.listMemba("Shotcut",2,"Shotcut.org",4), n
 
 export const alleListen: {[key: string]: logik.listMemba[]} = {"chatting-apps": chattingApps, "search-engines": searchEngines, "streaming-unlimited": streamingUnlimited, "cloud-downloads": clouds, "youtube-social": youtubesocials, "video-editors": videoEditors};
 
+export var popover: any;
+export function setPopover(po: any) { popover = po; }
 
 
 

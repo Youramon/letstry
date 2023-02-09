@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PopoverpageComponent } from '../popoverpage/popoverpage.component';
-import { AppComponent } from '../app.component';
+import { IonicModule } from '@ionic/angular';
 
 
 
 @NgModule({
   declarations: [PopoverpageComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule
   ],
   exports: [PopoverpageComponent]
 })

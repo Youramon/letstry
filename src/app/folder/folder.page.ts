@@ -27,7 +27,7 @@ public randcolorray2 = [2,6,8]
 }
 
   listentest(){
-    this.counter = this.counter +1;
+    this.counter = this.counter + 1;
     logik.listSort()
   }
  public jzListe: logik.listMemba[] = [new logik.listMemba("aaa",45,"bbb")];
