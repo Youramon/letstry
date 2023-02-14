@@ -10,25 +10,23 @@
 </ion-header>
 
 <ion-content>
-  <ion-select interface = "popover" placeholder="Select fruit">
-    <ion-select-option value="apples">Apples</ion-select-option>
-    <ion-select-option value="oranges">Oranges</ion-select-option>
-    <ion-select-option value="bananas">Bananas</ion-select-option>
+  <ion-select interface = "popover" placeholder="WÄHLE EINE LISTE" (ionChange)="handleChange($event)">
+    <ion-select-option value="searchEngines">Search Engines</ion-select-option>
+    <ion-select-option value="chattingApps">Chatting Apps</ion-select-option>
+    <ion-select-option value="streamingUnlimited">Streaming unlimited</ion-select-option>
+    <ion-select-option value = "videoEditors">Video Editors</ion-select-option>
   </ion-select>
-  <ion-accordion-group>
-  <ion-list *ngFor = "let p of jzListe" [inset] = "true">
- 
-    <ion-accordion value = {{p.title}}>
- 
-      <ion-item slot="header" color="light">
-    <ion-label>{{p.title}}</ion-label>
- 
-  </ion-item>
- 
-  <div class="ion-padding" slot="content">
-    {{p.link}}
-  </div>
- </ion-accordion>
-  </ion-list>
-</ion-accordion-group>
+  
+<ion-list [inset] = "true" class = "rounded">
+       <ion-accordion-group>
+        <ion-accordion *ngFor = "let p of jzListe" expand = "inset">
+          <ion-item slot="header" color="light">
+            <ion-label>{{p.title}}</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <a href = "{{p.link}}" target = "_blank"> Besuche {{p.title}} hier!</a>
+          </div>
+        </ion-accordion>
+       </ion-accordion-group>
+      </ion-list>
 </ion-content>
