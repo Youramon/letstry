@@ -7,3 +7,20 @@ ion-select{
 margin-left: 30%;
 margin-right: 30%;
 }
+
+.rounded {
+    border-radius: 15px;
+  overflow: hidden;
+    width: 400px;
+    margin-left: 39%;
+    margin-top: 20px;
+    border: 0px;
+    padding: 0px;
+  }
+  .ion-padding{
+    background: linear-gradient(to top right,#1b37d6b0 0%, hsl(261, 86%, 41%)100%);
+    border-radius: 0px;
+  }
+  a{
+    color: white;
+  }

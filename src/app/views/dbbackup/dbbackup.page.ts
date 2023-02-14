@@ -10,7 +10,7 @@ import *as logik from "src/app/folder/logik";
   styleUrls: ['./dbbackup.page.scss'],
 })
 export class DbbackupPage implements OnInit {
-  public jzListe: logik.listMemba[] = [new logik.listMemba("rolf",45,"kopter")];;
+  public jzListe: logik.listMemba[] =  dbbu.alleListenBU["searchEngines"];
   
 constructor(private navCtrl: NavController) { }
   goBack() {
@@ -18,6 +18,9 @@ constructor(private navCtrl: NavController) { }
   }
   ngOnInit() {
     this.jzListe = dbbu.alleListenBU["searchEngines"];
+    console.log(this.jzListe)
   }
- 
+ handleChange(e:any){
+  this.jzListe = dbbu.alleListenBU[e.detail.value]
+ }
 }
