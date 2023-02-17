@@ -18,7 +18,7 @@ constructor(private navCtrl: NavController) { }
   }
   ngOnInit() {
     this.jzListe = dbbu.alleListenBU["searchEngines"];
-    console.log(this.jzListe)
+    
   }
  handleChange(e:any){
   this.jzListe = dbbu.alleListenBU[e.detail.value]
