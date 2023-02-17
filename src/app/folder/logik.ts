@@ -1,17 +1,33 @@
-import { NumberSymbol } from "@angular/common";
+
 import *as db from "./db"
 import *as dbbu from "./dbbackup"
 
 
 
+export class listMemba{
+  initPos: number;
+   title: string;
+   link: string;
+   incfirst: number;
+   movement: number;
 
+   
+  constructor(title: string, initPos: number,  link: string, incfirst = 0, movement = 0){
+this.initPos = initPos;
+this.title = title;
+this.link = "https://" + link;
+this.incfirst = incfirst;
+this.movement = movement;
+  }
+}
 
 
 export function listSort(){
 
 for (let key in db.alleListen) {
     let value = db.alleListen[key];
-  value.forEach(element => {
+
+    value.forEach(element => {
     element.movement = 0;
   });
     if(value.length > 1){
@@ -47,8 +63,10 @@ for (let key in db.alleListen) {
    if(diezahl >= value.length-1)
    {
     diezahl = value.length-1;
-    //dbbu.alleListenBU[Object.keys({value})[0]].push(value.splice(diezahl,1)[0]) KÜMMER DICH SPÄTER DRUM
-    value.splice(diezahl,1)[0];
+    
+    dbbu.alleListenBU[db.fickDichTS(value[0])].push(value.splice(diezahl,1)[0]);
+    
+    
    }
    else 
    {
@@ -71,19 +89,4 @@ function arrayMove(arr: any[], from: number, to: number): void{
 }
 
 
-export class listMemba{
-   initPos: number;
-    title: string;
-    link: string;
-    incfirst: number;
-    movement: number;
 
-    
-   constructor(title: string, initPos: number,  link: string, incfirst = 0, movement = 0){
-this.initPos = initPos;
-this.title = title;
-this.link = "https://" + link;
-this.incfirst = incfirst;
-this.movement = movement;
-   }
-}
