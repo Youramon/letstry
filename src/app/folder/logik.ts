@@ -1,4 +1,3 @@
-
 import *as db from "./db"
 import *as dbbu from "./dbbackup"
 
@@ -12,7 +11,7 @@ export class listMemba{
    movement: number;
 
    
-  constructor(title: string, initPos: number,  link: string, incfirst = 0, movement = 0){
+  constructor(title: string, initPos: number,  link: string, incfirst = 0, movement: number = 0){
 this.initPos = initPos;
 this.title = title;
 this.link = "https://" + link;
@@ -41,16 +40,20 @@ for (let key in db.alleListen) {
   if(diezahl != 0){                 
     if(diezahl == 1 && value[diezahl-1].incfirst > 0){
         value[diezahl-1].incfirst--;
+        value[diezahl-1].movement = 2;
+        
     }
     else{
     arrayMove(value,diezahl,diezahl-1);             //Zahl wird bewegt
-    }  
+    value[diezahl-1].movement = 2;  
+  }  
 }
 
   else if (diezahl == 0) {                          //Wenn die Zahl = 0 ist wird incfirst um 1 erhöht rolf
     value[0].incfirst++;
+    value[diezahl].movement = 2;
   }
-  value[diezahl-1].movement = 2;
+  
   
 ///////////////////////////////////////
 //////AB HIER DANN RUNTER//////////////
@@ -72,14 +75,16 @@ for (let key in db.alleListen) {
    {
     if(diezahl == 0 && value[diezahl].incfirst > 0)
     {
-        value[diezahl].incfirst--
+        value[diezahl].incfirst--;
+        value[diezahl+1].movement = 1;
     }
     else{
     arrayMove(value,diezahl, diezahl + 1);
+    value[diezahl+1].movement = 1;
     }
 }
 
-value[diezahl+1].movement = 1;
+;
 }
 }
 
