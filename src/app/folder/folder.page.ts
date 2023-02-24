@@ -27,7 +27,7 @@ public randcolorray2 = [2,6,8]
 
   async listentest(){
     this.counter = this.counter + 1;
-    logik.listSort()
+    logik.listSort(this.folder)
     if(this.jzListe.length == 3 && !this.wurdeAlörtgezeigt){
     const alert = await this.alertController.create({
           header: 'Achtung!',
@@ -38,6 +38,39 @@ public randcolorray2 = [2,6,8]
 
         await alert.present();
         this.wurdeAlörtgezeigt = true;
+      }
+      else if (this.jzListe.length === 1)
+      {
+        const alert = await this.alertController.create({
+          header: 'Limit der Listen erreicht',
+          message: 'Gib hier dein neues Item ein',
+          backdropDismiss: false,
+          inputs: [
+            {
+            name: "name",
+            type: "text",
+            placeholder: "Gebe hier den Name ein"
+            },
+            {
+              name: "link",
+              type: "text",
+              placeholder: "Gebe hier den Link ein"
+            }
+          ],
+          buttons: [
+            {
+              text: "noch Warten",
+              role: "cancel"
+            },
+            {
+            text: 'Bestätigen',
+            handler: (alertData) => {
+              this.jzListe = logik.neueItemsRein(alertData.name, alertData.link, this.folder)
+             }
+          }],
+        });
+
+        await alert.present();
       }
   }
  public jzListe: logik.listMemba[] = [new logik.listMemba("aaa",45,"bbb")];

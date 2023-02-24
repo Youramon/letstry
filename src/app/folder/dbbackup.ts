@@ -24,5 +24,5 @@ export const youtubesocialsBU = [new listMemba("Tiktok L",28,"tiktok.com")];
 export const videoEditorsBU = [new listMemba("movie maker online",27,"moviemakeronline.com"),new listMemba("kostenpflichtiges Programm",29,"google.com"), new listMemba("Alternative zu Platz 2",28,"app.store.com"), new listMemba("jetziges Humble Bundle Angebot",27,"humblebundle.com")];
 
 
-export var alleListenBU: {[key: string]: listMemba[]}= {"searchEngines": searchEngineBU, "chattingApps": chattingAppsBU, "streamingUnlimited": streamingUnlimitedBU, "clouds":cloudsBU, "youtubesocials": cloudsBU,"videoEditors": videoEditorsBU};
+export var alleListenBU: {[key: string]: listMemba[]}= {"search-engines": searchEngineBU, "chatting-apps": chattingAppsBU, "streaming-unlimited": streamingUnlimitedBU, "clouds":cloudsBU, "youtube-social": cloudsBU,"video-editors": videoEditorsBU};
 

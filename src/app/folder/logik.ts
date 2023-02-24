@@ -21,7 +21,7 @@ this.movement = movement;
 }
 
 
-export function listSort(){
+export function listSort(folder: string){
 
 for (let key in db.alleListen) {
     let value = db.alleListen[key];
@@ -66,8 +66,8 @@ for (let key in db.alleListen) {
    if(diezahl >= value.length-1)
    {
     diezahl = value.length-1;
-    
-    dbbu.alleListenBU[db.fickDichTS(value[0])].push(value.splice(diezahl,1)[0]);
+   
+    dbbu.alleListenBU[folder].push(value.splice(diezahl,1)[0]);
     
     
    }
@@ -84,7 +84,7 @@ for (let key in db.alleListen) {
     }
 }
 
-;
+
 }
 }
 
@@ -93,5 +93,17 @@ function arrayMove(arr: any[], from: number, to: number): void{
     arr.splice(to, 0, arr.splice(from, 1)[0]);
 }
 
+export function neueItemsRein(neuName: string, neuLink: string, liste: string)
+{
 
+  dbbu.alleListenBU[liste].splice(db.alleListen[liste].length-2,2);
+db.alleListen[liste] = db.alleListen[liste].concat(dbbu.alleListenBU[liste]);
+for (let item of db.alleListen[liste])
+{
+  item.initPos = db.alleListen[liste].indexOf(item) + 1;
+}
+db.alleListen[liste].push(new listMemba(neuName,db.alleListen[liste].length + 1, neuLink))
+dbbu.alleListenBU[liste].splice(0);
+return db.alleListen[liste];
+}
 
