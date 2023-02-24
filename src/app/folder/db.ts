@@ -17,22 +17,8 @@ export const alleListen: {[key: string]: logik.listMemba[]} = {"chatting-apps": 
 export var popover: any;
 export function setPopover(po: any) { popover = po; }
 
-export function fickDichTS(value: logik.listMemba): string{
-    if(value == searchEngines[0])
-    return "searchEngines"
-    else if(value == chattingApps[0])
-    return "chattingApps";
-    else if(value == streamingUnlimited[0])
-    return "streamingUnlimited"
-    else if(value == clouds[0])
-    return "clouds"
-    else if(value == youtubesocials[0])
-    return "youtubesocials";
-    else if(value == videoEditors[0])
-    return "videoEditors";
-    else 
-    return "";
-}
+
+
 
 
 
