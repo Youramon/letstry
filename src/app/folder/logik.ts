@@ -24,7 +24,7 @@ this.movement = movement;
 export function listSort(folder: string){
 
 for (let key in db.alleListen) {
-    let value = db.alleListen[key];
+    let value = db.alleListen[key]; //vielleicht entfernen rolf
 
     value.forEach(element => {
     element.movement = 0;
