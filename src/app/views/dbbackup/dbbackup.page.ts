@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import *as db from "src/app/folder/db";
-import *as dbbu from "src/app/folder/dbbackup";
-import *as logik from "src/app/folder/logik";
+import { listMemba } from 'src/app/folder/listMemba';
+import *as dbbu from "src/app/folder/dbbackup"
 
 @Component({
   selector: 'app-dbbackup',
@@ -10,7 +9,7 @@ import *as logik from "src/app/folder/logik";
   styleUrls: ['./dbbackup.page.scss'],
 })
 export class DbbackupPage implements OnInit {
-  public jzListe: logik.listMemba[] =  dbbu.alleListenBU["searchEngines"];
+  public jzListe: listMemba[] =  dbbu.alleListenBU["searchEngines"];
   
 constructor(private navCtrl: NavController) { }
   goBack() {

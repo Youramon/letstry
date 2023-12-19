@@ -2,14 +2,17 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import *as db from "./db"
 import *as logik from "./logik"
-import {DbbackupPage} from "src/app/views/dbbackup/dbbackup.page"
+import { listMemba } from './listMemba';
 import { AlertController } from '@ionic/angular';
+
+
+
 
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
-})
+}) 
  
 
 
@@ -25,14 +28,18 @@ public randcolorray2 = [2,6,8]
   return Math.round(Math.random()*255);
 }
 
-  async listentest(){
+  
+async listentest(){
+ 
+  
     this.counter = this.counter + 1;
     logik.listSort(this.folder)
-    if(this.jzListe.length == 3 && !this.wurdeAlörtgezeigt){
+    if(this.jzListe.length == 3){
     const alert = await this.alertController.create({
           header: 'Achtung!',
           subHeader: 'Länge der Liste wird kritisch uwu',
           message: 'Recherchier schonmal nach etwas Neuem',
+          backdropDismiss: false,
           buttons: ['OK'],
         });
 
@@ -65,7 +72,7 @@ public randcolorray2 = [2,6,8]
             {
             text: 'Bestätigen',
             handler: (alertData) => {
-              this.jzListe = logik.neueItemsRein(alertData.name, alertData.link, this.folder)
+          this.jzListe = (logik.neueItemsRein(alertData.name, alertData.link, this.folder));
              }
           }],
         });
@@ -73,7 +80,7 @@ public randcolorray2 = [2,6,8]
         await alert.present();
       }
   }
- public jzListe: logik.listMemba[] = [new logik.listMemba("aaa",45,"bbb")];
+ public jzListe: listMemba[] = [new listMemba("aaa",45,"bbb")];
 
 constructor(private activatedRoute: ActivatedRoute, private alertController: AlertController) { }
 
@@ -88,10 +95,10 @@ constructor(private activatedRoute: ActivatedRoute, private alertController: Ale
       this.randcolorray[i] = this.randcolor();
       this.randcolorray2[i] = this.randcolor();
       }
-    this.wurdeAlörtgezeigt = false;
+    
   
     }
 
 }
 
-//aaa
+//aaa 
