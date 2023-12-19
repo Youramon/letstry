@@ -16,7 +16,6 @@ export class PopoverpageComponent implements OnInit {
   navigatetodbbackup(){
    db.popover.dismiss();
     this.router.navigateByUrl('/dbbackup')
-   
   }
 
 }

@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'dbbackup',
     loadChildren: () => import('./views/dbbackup/dbbackup.module').then( m => m.DbbackupPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 
  
 ];

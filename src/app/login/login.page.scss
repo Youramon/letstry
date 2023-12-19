@@ -1,0 +1,16 @@
+ion-content{
+    --background: linear-gradient(45deg, rgba(39,212,97,1) 0%, rgba(9,121,52,1) 35%, rgb(30, 181, 211) 100%);
+}
+.transparent{
+    --background:#25252500;
+}
+ion-card{
+ --background: linear-gradient(to right top, #132e43 0%, #000fff 50%,#0084ff 100%); 
+    margin-top: 20px;
+    margin-left: 4px;
+    transition: box-shadow 0.5s;
+    transition-timing-function: ease-out;
+}
+ion-card:hover{
+    box-shadow: 10px 10px 6px black;
+}

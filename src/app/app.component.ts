@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,5 +18,16 @@ export class AppComponent {
     {title: "Video editors", url: "/folder/video-editors", icon: "desktop"}
   ];
 
-  constructor() {}
+  constructor(private platform: Platform) {
+    this.initializeApp();
+}
+initializeApp() {
+  this.platform.ready().then(() => {
+    // Function to run when the app is first opened
+    this.doSomething();
+  });
+}
+async doSomething() {
+  console.log("DO SOMETHING")
+}
 }
