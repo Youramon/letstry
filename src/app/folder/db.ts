@@ -17,6 +17,8 @@ class listMemba{
 
 export const searchEngines = [new listMemba("Bing",4,"bing.com"), new listMemba("dogpile", 12,"dogpile.com"),new listMemba("Aol", 20, "Aol.com"),  new listMemba("kagi",1,"kagi.com"),new listMemba("etour", 18,"etour.com"), new listMemba("google", 7,"google.com")];
 
+export const chatBots = [new listMemba("ChatGPT",1,"chat.openai.com"), new listMemba("Claude",2,"claude.ai"), new listMemba("Gemini",3,"gemini.google.com"), new listMemba("Copilot",4,"copilot.microsoft.com"), new listMemba("Perplexity",5,"perplexity.ai"), new listMemba("DeepSeek",6,"chat.deepseek.com")];
+
 export const chattingApps = [new listMemba("Messages by Google",8,"messages.google.com"),new listMemba("WhatsApp",4,"play.google.com/store/apps/details?id=com.whatsapp&hl=en&gl=US&pli=1"),new listMemba("Cubie",47, "www.techinasia.com/featured-google-play-store-lessons-cubie-messenger"),  new listMemba("LINE", 10,"line.me"),new listMemba("Apple Nachrichten",6,"support.apple.com/de-de/messages"), new listMemba("Facebook messenger", 15,"Messenger.com")]
 
 export const streamingUnlimited = [new listMemba("DoodStream",14,"doodstream.com"), new listMemba("HighStream",32,"highstream.tv"), new listMemba("dubz",38,"dubz.co"), new listMemba("UpToBox",4,"uptobox.com"),new listMemba("Supervideo",40,"supervideo.tv"), new listMemba("mixdrop.co",20,"mixdrop.co")]
@@ -27,9 +29,26 @@ export const youtubesocials = [new listMemba("Facebook.com",1,"Facebook.com"), n
 
 export const videoEditors = [new listMemba("Shotcut",2,"Shotcut.org",4), new listMemba("VSDC Video editor Pro",5,"videosoftdev.com"), new listMemba("Magix vegas Pro 16 edit",1,"www.vegascreativesoftware.com/index.php?id=351&_oB=vegas-pro-365&_oC=subscription&_oD=12m1m&L=25&AffiliateID=149&phash=0xe1EsmN8WOp27sZ&pk_campaign=Brand_Vegas_Pro_DE_(G)&pk_kwd=magix%20vegas%20pro&pk_source=googleAds&pk_medium=cpc&pk_content=615755549455&gclid=CjwKCAiA_6yfBhBNEiwAkmXy5-zT-R26PQd-RHDWdXHvU0CxPhCCNuSB-6pOMk_5_pkLT9ZOn1qgxhoC89QQAvD_BwE"),new listMemba("Openshot",6,"www.openshot.org")]
 
-export const alleListen: {[key: string]: listMemba[]} = {"chatting-apps": chattingApps, "search-engines": searchEngines, "streaming-unlimited": streamingUnlimited, "cloud-downloads": clouds, "youtube-social": youtubesocials, "video-editors": videoEditors};
+export const alleListen: {[key: string]: listMemba[]} = {
+  "search-engines": searchEngines, 
+  "chat-bots": chatBots,
+  "chatting-apps": chattingApps, 
+  "streaming-unlimited": streamingUnlimited, 
+  "cloud-downloads": clouds, 
+  "youtube-social": youtubesocials, 
+  "video-editors": videoEditors
+};
 
-export const alleListenStr: {[key: string]: string} = {"chatting-apps": "chattingApps","search-engines": "searchEngines" , "streaming-unlimited": "streamingUnlimited", "cloud-downloads": "clouds", "youtube-social": "youtubesocials", "video-editors": "videoEditors"}
+// Mapping von URL-Pfad zu Supabase-Tabellenname
+export const alleListenStr: {[key: string]: string} = {
+  "search-engines": "searchEngines",
+  "chat-bots": "chatBots",
+  "chatting-apps": "chattingApps",
+  "streaming-unlimited": "streamingUnlimited", 
+  "cloud-downloads": "clouds", 
+  "youtube-social": "youtubesocials", 
+  "video-editors": "videoEditors"
+}
 
 export var popover: any;
 export function setPopover(po: any) { popover = po; }

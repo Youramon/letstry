@@ -2,6 +2,9 @@
   <ion-toolbar>
     <ion-title>{{title}}</ion-title>
     <ion-buttons slot="end">
+      <ion-button (click)="onRefresh()">
+        <ion-icon name="refresh-outline"></ion-icon>
+      </ion-button>
       <ion-button (click)="presentPopover($event)">
         <ion-icon name="ellipsis-vertical"></ion-icon>
       </ion-button>

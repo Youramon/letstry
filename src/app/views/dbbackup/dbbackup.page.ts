@@ -4,9 +4,10 @@ import { listMemba } from 'src/app/folder/listMemba';
 import *as dbbu from "src/app/folder/dbbackup"
 
 @Component({
-  selector: 'app-dbbackup',
-  templateUrl: './dbbackup.page.html',
-  styleUrls: ['./dbbackup.page.scss'],
+    selector: 'app-dbbackup',
+    templateUrl: './dbbackup.page.html',
+    styleUrls: ['./dbbackup.page.scss'],
+    standalone: false
 })
 export class DbbackupPage implements OnInit {
   public jzListe: listMemba[] =  dbbu.alleListenBU["searchEngines"];

@@ -14,10 +14,9 @@ import { PopoverpagemoduleModule } from '../popoverpagemodule/popoverpagemodule.
     FormsModule,
     IonicModule,
     FolderPageRoutingModule,
-    SharedHeaderComponent,
     PopoverpagemoduleModule
   ],
-  declarations: [FolderPage],
+  declarations: [FolderPage, SharedHeaderComponent],
   exports: []
 })
 export class FolderPageModule {}

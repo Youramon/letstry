@@ -26,17 +26,50 @@ export class SupabaseService {
     return this.supabase.auth.getSession()
   }
 
-  async download(){
-    
-return await this.supabase
-  .from('mainProjectTest')
-  .select('*')
+  async getListData(tableName: string) {
+    try {
+      const { data, error } = await this.supabase
+        .from(tableName)
+        .select('*')
+        .order('Platzierung', { ascending: true });
+      
+      if (error) {
+        console.error('Fehler beim Laden der Daten:', error);
+        return null;
+      }
+      
+      return data;
+    } catch (err) {
+      console.error('Unerwarteter Fehler:', err);
+      return null;
+    }
   }
   
-  async upload(){
-    let {data, error} = await this.supabase
-    .from('mainProjectTest')
-    .insert([{ title: "youtube.com"}, {initPos: 1}, {link: "youtube.com"}, {incfirst: 0 }]).select();
+  async insertListItem(tableName: string, item: any) {
+    const { data, error } = await this.supabase
+      .from(tableName)
+      .insert([item])
+      .select();
+    
+    if (error) {
+      console.error('Fehler beim Einfügen:', error);
+    }
+    
+    return { data, error };
+  }
+
+  async updateListItem(tableName: string, id: number, updates: any) {
+    const { data, error } = await this.supabase
+      .from(tableName)
+      .update(updates)
+      .eq('id', id)
+      .select();
+    
+    if (error) {
+      console.error('Fehler beim Aktualisieren:', error);
+    }
+    
+    return { data, error };
   }
   /*
   get profile() {

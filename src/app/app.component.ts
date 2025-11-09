@@ -3,19 +3,20 @@ import { Platform } from '@ionic/angular';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+    selector: 'app-root',
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
   public appPages = [
-    
-    {title: "search Engines", url: "/folder/search-engines", icon: "search-outline"},
+    {title: "Search Engines", url: "/folder/search-engines", icon: "search-outline"},
+    {title: "Chat Bots", url: "/folder/chat-bots", icon: "chatbubbles-outline"},
     {title: "Chatting Apps", url: "/folder/chatting-apps", icon: "paper-plane"},
-    {title: "Streaming Unimited", url: "/folder/streaming-unlimited", icon: "time-outline"},
-    {title: "cloud/downloads", url: "/folder/cloud-downloads", icon: "cloud-outline"},
-    {title: "Youtube + social media", url: "/folder/youtube-social", icon: "happy-outline"},
-    {title: "Video editors", url: "/folder/video-editors", icon: "desktop"}
+    {title: "Streaming Unlimited", url: "/folder/streaming-unlimited", icon: "time-outline"},
+    {title: "Cloud/Downloads", url: "/folder/cloud-downloads", icon: "cloud-outline"},
+    {title: "Youtube + Social Media", url: "/folder/youtube-social", icon: "happy-outline"},
+    {title: "Video Editors", url: "/folder/video-editors", icon: "desktop"}
   ];
 
   constructor(private platform: Platform) {

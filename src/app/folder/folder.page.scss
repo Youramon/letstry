@@ -7,9 +7,10 @@ ion-menu-button {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
 }
 
 #container strong {
@@ -30,10 +31,12 @@ ion-menu-button {
 
 
 .center{
-display:flex;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  height: 90%;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  padding-top: 56px;
 }
 
 .rounded {
@@ -50,13 +53,40 @@ overflow: hidden;
 ion-item {
   width: 100%;
   height: 10%;
-
-
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --border-style: none;
+  --inner-border-width: 0;
+  
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(26, 93, 148, 0.4);
+    filter: brightness(1.1);
+  }
+  
+  &:active {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .hintergrund{
   --background: linear-gradient(to right top, #144165 0%,#1a5d94 40%, #000fff 100%);
+  height: 100%;
+  width: 100%;
+}
 
+ion-content {
+  --padding-bottom: 0;
+  --padding-top: 0;
+  --offset-top: 56px;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
 }
 
 ion-fab-button{

@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import *as db from "src/app/folder/db"
 @
 Component({
-  selector: 'app-popoverpage',
-  templateUrl: './popoverpage.component.html',
-  styleUrls: ['./popoverpage.component.scss'],
+    selector: 'app-popoverpage',
+    templateUrl: './popoverpage.component.html',
+    styleUrls: ['./popoverpage.component.scss'],
+    standalone: false
 })
 export class PopoverpageComponent implements OnInit {
 

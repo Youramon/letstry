@@ -4,19 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/search-engines',
+    redirectTo: 'folder/chat-bots',
     pathMatch: 'full'
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },  {
+    loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)
+  },
+  {
     path: 'dbbackup',
-    loadChildren: () => import('./views/dbbackup/dbbackup.module').then( m => m.DbbackupPageModule)
+    loadChildren: () => import('./views/dbbackup/dbbackup.module').then(m => m.DbbackupPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
 
  
