@@ -29,6 +29,16 @@ export const youtubesocials = [new listMemba("Facebook.com",1,"Facebook.com"), n
 
 export const videoEditors = [new listMemba("Shotcut",2,"Shotcut.org",4), new listMemba("VSDC Video editor Pro",5,"videosoftdev.com"), new listMemba("Magix vegas Pro 16 edit",1,"www.vegascreativesoftware.com/index.php?id=351&_oB=vegas-pro-365&_oC=subscription&_oD=12m1m&L=25&AffiliateID=149&phash=0xe1EsmN8WOp27sZ&pk_campaign=Brand_Vegas_Pro_DE_(G)&pk_kwd=magix%20vegas%20pro&pk_source=googleAds&pk_medium=cpc&pk_content=615755549455&gclid=CjwKCAiA_6yfBhBNEiwAkmXy5-zT-R26PQd-RHDWdXHvU0CxPhCCNuSB-6pOMk_5_pkLT9ZOn1qgxhoC89QQAvD_BwE"),new listMemba("Openshot",6,"www.openshot.org")]
 
+// Fallback-Daten für die Tabelle "email"
+export const email = [
+  new listMemba("Gmail", 1, "mail.google.com"),
+  new listMemba("Outlook", 2, "outlook.live.com"),
+  new listMemba("Yahoo Mail", 3, "mail.yahoo.com"),
+  new listMemba("Proton Mail", 4, "proton.me"),
+  new listMemba("iCloud Mail", 5, "www.icloud.com/mail"),
+  new listMemba("Tutanota", 6, "tutanota.com")
+]
+
 export const alleListen: {[key: string]: listMemba[]} = {
   "search-engines": searchEngines, 
   "chat-bots": chatBots,
@@ -36,7 +46,8 @@ export const alleListen: {[key: string]: listMemba[]} = {
   "streaming-unlimited": streamingUnlimited, 
   "cloud-downloads": clouds, 
   "youtube-social": youtubesocials, 
-  "video-editors": videoEditors
+  "video-editors": videoEditors,
+  "email": email
 };
 
 // Mapping von URL-Pfad zu Supabase-Tabellenname
@@ -46,8 +57,9 @@ export const alleListenStr: {[key: string]: string} = {
   "chatting-apps": "chattingApps",
   "streaming-unlimited": "streamingUnlimited", 
   "cloud-downloads": "clouds", 
-  "youtube-social": "youtubesocials", 
-  "video-editors": "videoEditors"
+  "youtube-social": "youtubeSocials", 
+  "video-editors": "videoEditors",
+  "email": "email"
 }
 
 export var popover: any;

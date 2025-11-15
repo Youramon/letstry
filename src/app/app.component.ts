@@ -16,7 +16,8 @@ export class AppComponent {
     {title: "Streaming Unlimited", url: "/folder/streaming-unlimited", icon: "time-outline"},
     {title: "Cloud/Downloads", url: "/folder/cloud-downloads", icon: "cloud-outline"},
     {title: "Youtube + Social Media", url: "/folder/youtube-social", icon: "happy-outline"},
-    {title: "Video Editors", url: "/folder/video-editors", icon: "desktop"}
+    {title: "Video Editors", url: "/folder/video-editors", icon: "desktop"},
+    {title: "Email", url: "/folder/email", icon: "mail-outline"}
   ];
 
   constructor(private platform: Platform) {
