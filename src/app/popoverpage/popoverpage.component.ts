@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
 import *as db from "src/app/folder/db"
-@
-Component({
+
+@Component({
     selector: 'app-popoverpage',
     templateUrl: './popoverpage.component.html',
     styleUrls: ['./popoverpage.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [IonicModule, CommonModule]
 })
 export class PopoverpageComponent implements OnInit {
 

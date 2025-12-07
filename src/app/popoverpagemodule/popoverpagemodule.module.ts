@@ -6,10 +6,11 @@ import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
-  declarations: [PopoverpageComponent],
+  declarations: [],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    PopoverpageComponent
   ],
   exports: [PopoverpageComponent]
 })

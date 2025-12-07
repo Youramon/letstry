@@ -9,7 +9,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "dev": "npx ionic serve --external --port 8100",
+    "tauri:dev":"npx ionic serve  --external",
+    "tauri:serve": "tauri dev",
+    "tauri:build": "npx ionic build --configuration production && npx tauri build"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +30,7 @@
     "@capacitor/keyboard": "^7.0.0",
     "@capacitor/status-bar": "^7.0.0",
     "@ionic/angular": "^8.7.9",
+    "@tauri-apps/api": "^2.0.0",
     "@supabase/supabase-js": "^2.80.0",
     "ionicons": "^6.0.3",
     "rxjs": "~7.5.0",
@@ -44,6 +49,7 @@
     "@angular/language-service": "^18.2.14",
     "@capacitor/cli": "^7.0.0",
     "@ionic/angular-toolkit": "12.3.0",
+    "@tauri-apps/cli": "^2.9.4",
     "@types/jasmine": "~4.0.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
